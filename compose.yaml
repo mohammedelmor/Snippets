@@ -3,7 +3,22 @@ services:
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=code_snippet'
-      - 'POSTGRES_PASSWORD=password'
-      - 'POSTGRES_USER=user'
+      - 'POSTGRES_PASSWORD=admin'
+      - 'POSTGRES_USER=admin'
     ports:
       - '5432:5432'
+  keycloak:
+    image: 'quay.io/keycloak/keycloak:23.0.6'
+    depends_on:
+      - postgres
+    environment:
+      - 'KEYCLOAK_ADMIN=admin'
+      - 'KEYCLOAK_ADMIN_PASSWORD=admin'
+      - 'KC_DB=postgres'
+      - 'KC_DB_URL=jdbc:postgresql://postgres:5432/code_snippet'
+      - 'KC_DB_USERNAME=admin'
+      - 'KC_DB_PASSWORD=admin'
+    ports:
+      - '8080:8080'
+    command:
+      - 'start-dev'

@@ -25,6 +25,8 @@ public class DataLoader {
     public void loadData() {
         log.info("Loading data");
 
+        snippetRepository.deleteAll();
+
         var snippet1 = new Snippet();
         snippet1.setTitle("JS function to add two numbers");
         snippet1.setCode("""
