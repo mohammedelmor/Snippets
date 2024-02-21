@@ -1,6 +1,7 @@
 package org.mohammed.snippets.services;
 
 import lombok.extern.slf4j.Slf4j;
+import org.mohammed.snippets.dto.SnippetDto;
 import org.mohammed.snippets.entity.Snippet;
 import org.mohammed.snippets.repository.SnippetRepository;
 import org.springframework.data.domain.Page;
@@ -21,5 +22,11 @@ public class SnippetService {
         return snippetRepository.findAll(PageRequest.of(page - 1, size));
     }
 
+    public Snippet createSnippet(SnippetDto snippetDto) {
+        Snippet snippet = new Snippet();
+        snippet.setTitle(snippetDto.getTitle());
+        snippet.setCode(snippetDto.getCode());
+        return snippetRepository.save(snippet);
+    }
 
 }

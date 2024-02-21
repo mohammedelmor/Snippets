@@ -42,7 +42,8 @@ public class SecurityConfig {
                 ));
 
         http.authorizeRequests(
-                c -> c.anyRequest().authenticated()
+                c -> c.requestMatchers("/swagger-ui/**", "/swagger-resources/**", "/swagger-ui.html", "/api-docs/**", "/webjars/**", "/swagger-config/**", "/v3/api-docs/swagger-config").permitAll()
+                        .anyRequest().authenticated()
         );
 
         return http.build();

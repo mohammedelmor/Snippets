@@ -1,13 +1,11 @@
 package org.mohammed.snippets.contoller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.mohammed.snippets.dto.SnippetDto;
 import org.mohammed.snippets.entity.Snippet;
 import org.mohammed.snippets.services.SnippetService;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/snippets")
@@ -26,6 +24,9 @@ public class SnippetController {
         return snippetService.findPaginated(page, size);
     }
 
-
+    @PostMapping
+    public Snippet createSnippet(SnippetDto dto) {
+        return snippetService.createSnippet(dto);
+    }
 
 }
