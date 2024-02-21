@@ -1,0 +1,43 @@
+{
+  "realm": "code_snippets",
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "emailVerified": false,
+      "attributes": {
+        "roles": ["admin"]
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "12345"
+        }
+      ]
+    },
+    {
+      "username": "user",
+      "enabled": true,
+      "emailVerified": false,
+      "attributes": {
+        "roles": ["user"]
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "12345"
+        }
+      ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "admin"
+      },
+      {
+        "name": "user"
+      }
+    ]
+  }
+}

@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/code_snippet
-    username: user
-    password: password
+    username: admin
+    password: admin
   flyway:
     schemas: snippets_db
 server:
