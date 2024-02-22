@@ -5,6 +5,7 @@ import org.mohammed.snippets.dto.SnippetDto;
 import org.mohammed.snippets.entity.Snippet;
 import org.mohammed.snippets.services.SnippetService;
 import org.springframework.data.domain.Page;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,8 +20,9 @@ public class SnippetController {
         this.snippetService = snippetService;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
-    public Page<Snippet> getSnippets(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size) {
+    public Page<Snippet> getAllSnippets(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size) {
         return snippetService.findPaginated(page, size);
     }
 

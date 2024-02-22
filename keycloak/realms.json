@@ -1,6 +1,7 @@
 {
   "realm": "code_snippets",
   "enabled": true,
+  "oauth2DeviceCodeLifespan": 100,
   "users": [
     {
       "username": "admin",
