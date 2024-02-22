@@ -1,13 +1,12 @@
 {
   "realm": "code_snippets",
+  "enabled": true,
   "users": [
     {
       "username": "admin",
       "enabled": true,
       "emailVerified": false,
-      "attributes": {
-        "roles": ["admin"]
-      },
+      "realmRoles": ["admin"],
       "credentials": [
         {
           "type": "password",
@@ -19,9 +18,7 @@
       "username": "user",
       "enabled": true,
       "emailVerified": false,
-      "attributes": {
-        "roles": ["user"]
-      },
+      "realmRoles": ["user"],
       "credentials": [
         {
           "type": "password",
@@ -39,5 +36,14 @@
         "name": "user"
       }
     ]
-  }
+  },
+  "clients": [
+    {
+      "clientId": "code_snippets",
+      "name": "Code Snippets",
+      "enabled": true,
+      "directAccessGrantsEnabled": true,
+      "publicClient": true
+    }
+  ]
 }
