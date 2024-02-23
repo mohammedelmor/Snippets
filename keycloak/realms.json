@@ -41,10 +41,14 @@
   "clients": [
     {
       "clientId": "code_snippets",
+      "secret": "secret",
+      "clientAuthenticatorType": "client-secret",
       "name": "Code Snippets",
       "enabled": true,
       "directAccessGrantsEnabled": true,
-      "publicClient": true
+      "redirectUris": [
+        "http://localhost:3000/*"
+      ]
     }
   ]
 }
