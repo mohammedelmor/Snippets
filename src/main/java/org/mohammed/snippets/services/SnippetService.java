@@ -42,6 +42,7 @@ public class SnippetService {
         Snippet snippet = new Snippet();
         snippet.setTitle(snippetCreateDto.title());
         snippet.setCode(snippetCreateDto.code());
+        snippet.setLanguage(snippetCreateDto.language());
         return snippetRepository.save(snippet);
     }
 
@@ -50,12 +51,12 @@ public class SnippetService {
         if (optionalSnippet.isEmpty()) {
             throw new SnippetNotFoundException(id);
         }
-        Jwt principal = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String username = principal.getClaimAsString("preferred_username");
+//        Jwt principal = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        String username = principal.getClaimAsString("preferred_username");
         Snippet snippet = optionalSnippet.get();
-        if (!snippet.getCreatedBy().equals(username)) {
-            throw new AccessDeniedException("You are not allowed to access this snippet");
-        }
+//        if (!snippet.getCreatedBy().equals(username)) {
+//            throw new AccessDeniedException("You are not allowed to access this snippet");
+//        }
         return snippet;
     }
 

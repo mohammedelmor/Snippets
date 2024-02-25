@@ -10,5 +10,6 @@ import java.io.Serializable;
  */
 public record SnippetCreateDto(
         @NotNull(message = "Title is required") String title,
-        @NotNull(message = "Code is required") String code) implements Serializable {
+        @NotNull(message = "Code is required") String code,
+        @NotNull(message = "language is required") String language) implements Serializable {
 }

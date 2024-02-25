@@ -19,6 +19,7 @@ import java.nio.file.AccessDeniedException;
 @RestController
 @RequestMapping("/api/snippets")
 @Slf4j
+@CrossOrigin(origins = "http://localhost:3000")
 public class SnippetController {
 
 

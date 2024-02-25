@@ -34,7 +34,7 @@ public class DataLoader {
                     return a + b;
                 }
                 """);
-        snippet1.setLanguage("JS");
+        snippet1.setLanguage("javascript");
         var snippet2 = new Snippet();
         snippet2.setTitle("JS function to subtract numbers");
         snippet2.setCode("""
@@ -42,7 +42,7 @@ public class DataLoader {
                     return a - b;
                 }
                 """);
-        snippet2.setLanguage("JS");
+        snippet2.setLanguage("javascript");
 
         var snippet3 = new Snippet();
         snippet3.setTitle("JS function to multiply numbers");
@@ -51,7 +51,7 @@ public class DataLoader {
                     return a * b;
                 }
                 """);
-        snippet3.setLanguage("JS");
+        snippet3.setLanguage("javascript");
         var snippet4 = new Snippet();
         snippet4.setTitle("JS function to power numbers");
         snippet4.setCode("""
@@ -59,7 +59,7 @@ public class DataLoader {
                     return a ** b;
                 }
                 """);
-        snippet4.setLanguage("JS");
+        snippet4.setLanguage("javascript");
         snippetRepository.saveAll(List.of(snippet1, snippet2, snippet3, snippet4));
     }
 
