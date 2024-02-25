@@ -1,0 +1,1 @@
+UPDATE snippets_db.snippet SET language = 'JS';

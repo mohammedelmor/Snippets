@@ -32,6 +32,11 @@ public class Snippet {
     @NotNull
     private String code;
 
+    @Column
+    @NotNull
+    private String language;
+
+
 
     @Column(name = "created_date", nullable = false, updatable = false)
     @CreatedDate

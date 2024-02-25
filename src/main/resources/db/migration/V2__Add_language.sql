@@ -1,0 +1,1 @@
+ALTER TABLE snippets_db.snippet ADD COLUMN language VARCHAR(255);

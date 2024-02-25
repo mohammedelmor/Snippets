@@ -1,0 +1,1 @@
+ALTER TABLE snippets_db.snippet ALTER COLUMN language SET NOT NULL;
