@@ -52,12 +52,7 @@ public class SnippetService {
         if (optionalSnippet.isEmpty()) {
             throw new SnippetNotFoundException(id);
         }
-//        Jwt principal = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        String username = principal.getClaimAsString("preferred_username");
         Snippet snippet = optionalSnippet.get();
-//        if (!snippet.getCreatedBy().equals(username)) {
-//            throw new AccessDeniedException("You are not allowed to access this snippet");
-//        }
         return snippet;
     }
 
