@@ -13,5 +13,6 @@ import java.util.List;
 @RepositoryRestResource(exported = false)
 public interface SnippetRepository extends JpaRepository<Snippet, Long> {
 
+
     Page<Snippet> findAllByCreatedBy(String username, Pageable pageable);
 }

@@ -10,6 +10,7 @@ import org.mohammed.snippets.repository.SnippetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class SnippetService {
     }
 
     public Page<Snippet> findPaginated(int page, int size) {
-        return snippetRepository.findAll(PageRequest.of(page - 1, size));
+        return snippetRepository.findAll(PageRequest.of(page - 1, size, Sort.by("id").ascending()));
     }
 
     public Page<Snippet> findAllByCreatedBy(String username, int page, int size) {
@@ -65,6 +66,7 @@ public class SnippetService {
                 snippet -> {
                     snippet.setTitle(dto.title());
                     snippet.setCode(dto.code());
+                    snippet.setLanguage(dto.language());
                     return snippetRepository.save(snippet);
                 })
                 .orElseThrow(() -> new SnippetNotFoundException(id));
