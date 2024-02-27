@@ -42,7 +42,7 @@ public class SnippetController {
         return snippetService.findAllByCreatedBy(username, page, size);
     }
     @PostMapping
-    public Snippet createSnippet(SnippetCreateDto dto) {
+    public Snippet createSnippet(@RequestBody @Valid SnippetCreateDto dto) {
         return snippetService.createSnippet(dto);
     }
 
